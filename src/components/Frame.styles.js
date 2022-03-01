@@ -278,33 +278,51 @@ const FrameStyles = `
     }
 
     .gh-portal-powered a {
+        position: relative;
         border: none;
-        display: block;
+        display: flex;
+        align-items: center;
         line-height: 0;
         border-radius: 4px;
+        text-decoration: none;
+        color: var(--grey3);
+        font-size: 1.25rem;
+        font-weight: 500;
     }
 
     .gh-portal-powered img {
         box-shadow: 0 1px 3px rgba(0,0,0,.08);
     }
 
-    @keyframes powered-fade-in {
-        0% {
-            transform: scale(0.98);
-            opacity: 0;
-        }
-        75% {
-            opacity: 1.0;
-        }
-        100%{
-            transform: scale(1);
-        }
-    }
-
     .gh-portal-powered a svg {
+        position: absolute;
         height: 16px;
         width: 16px;
-        margin: 0 6px 0 0;
+        transition: all 0.3s ease-in-out 0.08s;
+        left: -8px;
+    }
+
+    .gh-portal-powered a span {
+        position: absolute;
+        display: block;
+        margin-left: 6px;
+        width: 180px;
+        left: -60px;
+        height: 20px;
+        top: 0;
+        opacity: 0;
+        transition: all 0.25s ease-in-out;
+    }
+
+    .gh-portal-powered a:hover svg {
+        transform: translateX(-60px);
+        transition: all 0.3s ease-in-out;
+    }
+
+    .gh-portal-powered a:hover span {
+        opacity: 1.0;
+        transform: translateX(7px);
+        transition: all 0.25s ease-in-out 0.12s;
     }
 
     .gh-portal-container-wide {
@@ -870,7 +888,7 @@ const MultipleProductsGlobalStyles = `
 }
 
 @media (max-width: 960px) {
-    .gh-portal-popup-wrapper.multiple-products {
+    .gh-portal-popup-wrapper.multiple-products.signup {
         margin: 20px !important;
         height: 100%;
         max-height: calc(100vh - 40px) !important;

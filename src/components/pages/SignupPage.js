@@ -7,6 +7,7 @@ import InputForm from '../common/InputForm';
 import {ValidateInputForm} from '../../utils/form';
 import {getSiteProducts, getSitePrices, hasMultipleProducts, hasOnlyFreePlan, isInviteOnlySite, getAvailableProducts, hasMultipleProductsFeature, freeHasBenefitsOrDescription} from '../../utils/helpers';
 import {ReactComponent as InvitationIcon} from '../../images/icons/invitation.svg';
+import {ReactComponent as GhostLogoSmall} from '../../images/ghost-logo-s.svg';
 
 const React = require('react');
 
@@ -138,7 +139,7 @@ export const SignupPageStyles = `
 
     .gh-portal-popup-wrapper.multiple-products .gh-portal-powered {
         display: flex;
-        margin-top: 24px;
+        margin-top: 48px;
         margin-bottom: 0;
         padding-bottom: 0;
     }
@@ -607,11 +608,13 @@ class SignupPage extends React.Component {
                 <footer className={'gh-portal-signup-footer ' + footerClass}>
                     {this.renderSubmitButton()}
                     {this.renderLoginMessage()}
-                    <div className="gh-portal-powered inside">
+                    <div className="gh-portal-powered">
                         <a href='https://ghost.org' target='_blank' rel='noopener noreferrer' onClick={() => {
                             window.open('https://ghost.org', '_blank');
                         }}>
-                            <img src="https://static.ghost.org/v4.0.0/images/powered.png" border="0" width="142" height="30" alt="Publish with Ghost" />
+                            <GhostLogoSmall />
+                            <span>Publish with Ghost</span>
+                            {/* <img src="https://static.ghost.org/v4.0.0/images/powered.png" border="0" width="142" height="30" alt="Publish with Ghost" /> */}
                         </a>
                     </div>
                 </footer>
