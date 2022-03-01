@@ -302,6 +302,10 @@ const FrameStyles = `
         left: -8px;
     }
 
+    .gh-portal-powered a svg path {
+        fill: var(--grey3);
+    }
+
     .gh-portal-powered a span {
         position: absolute;
         display: block;
@@ -315,7 +319,7 @@ const FrameStyles = `
     }
 
     .gh-portal-powered a:hover svg {
-        transform: translateX(-60px);
+        transform: translateX(-60px) rotate(90deg);
         transition: all 0.3s ease-in-out;
     }
 
